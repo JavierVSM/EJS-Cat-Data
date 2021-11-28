@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cats and Cars Express</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body>
+    <header class="nav">
+        <div class="nav-title">
+            <h1>EJS Cats</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div>
+            <img src="./images/<%= cat.pic %>" class="card__image" height="400" width="600">            
+        </div>
+
+        <div class="card">
+            <div class="card__body">
+                    <div> <h4>Favorite food:</h4> <%= cat.food %> </div>
+                    <div> <h4>Age:</h4> <%= cat.age %> </div>
+                    <div> 
+                        <h4>Sleeping Spots:</h4>
+                        <% for (let x in cat.spot) { %>
+                            <li> <%= cat.spot[x]%> </li>       
+                        <% } %>                   
+                    </div>
+            <div>
+                    <a href="/"><h4>Back to Index</h4></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
